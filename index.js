@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://pps:pps@cluster0.lavx8.mongodb.net/db")
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{console.log("server connected successfully")})
 .catch(err => {console.log("The erros is ",err)})
 
